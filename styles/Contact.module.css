@@ -1,0 +1,52 @@
+.contact_main{
+    width: 690px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid black 1px;
+    border-radius: 10px;
+    padding: 20px;
+    background: rgba(0,0,0,.3);
+}
+
+.contact-form {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-form button {
+    opacity: .2;
+}
+
+.contact-form > h1 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .contact_main {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .contact_form h1 {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .contact_form button {
+        height: 60px;
+    }
+
+    .contact_form input {
+        height: 60px;
+    }
+
+    .contact_form textarea {
+        height: 200px;
+    }
+
+
+}

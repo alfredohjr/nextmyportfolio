@@ -1,16 +1,60 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: right;
+    
+  }
+  
+a {
+    color: inherit;
+    text-decoration: none;
 }
+
+a:link, a:visited , a:hover, a:active {
+    text-decoration: none;
+    /* font-size: 20px; */
+} 
+  
+  input , textarea, button {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /* opacity: .2; */
+    /* background: white; */
+    border-radius: 5px;
+    border: 0;
+    padding-left: 15px;
+    margin-top: 5px;
+    min-height: 30px;
+  }
+  
+  textarea {
+    padding: 15px;
+  }
+  
+  /* FIM: Form buttons */
+  
+  /* INICIO: Responsive */
+  @media only screen and (max-width: 768px) {
+    body {
+        /* background: rgb(167,171,0); */
+        /* background: linear-gradient(193deg, rgba(167,171,0,1) 31%, rgba(90,201,65,1) 91%, rgba(0,0,0,1) 100%); */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: right;
+    }
+  
+    body::-webkit-scrollbar {
+        display: none; /* Chrome */
+    }
+  }
+  /* FIM: Responsive */
+  
