@@ -1,0 +1,12 @@
+[Unit]
+Description=Para o meu portfolio em nextjs
+
+[Service]
+Type=simple
+ExecStart=/dados/MyApps/nextmyportfolio/start.sh
+PIDFile=/tmp/nextmyportfolio.pid
+User=root
+WorkingDirectory=/dados/MyApps/nextmyportfolio/
+
+[Install]
+WantedBy=multi-user.target
