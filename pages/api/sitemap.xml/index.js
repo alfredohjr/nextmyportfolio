@@ -3,14 +3,18 @@ import { format } from 'date-fns';
 
 export default (req, res) => {
 
-    const baseUrl = 'http://localhost:3000'
-    var urls = [{fullUrl: `${baseUrl}`}];
+    const baseUrl = process.env.NEXT_PUBLIC_BASEURL
+    var urls = [
+        {fullUrl: `${baseUrl}`},
+        {fullUrl: `${baseUrl}/contact`}
+    ];
     
     // para os posts ou /posts
     const posts = readPosts();
     urls = urls.concat(posts.map((p) => {
                         return { 
-                            fullUrl: `${baseUrl}/blog/${p.link}`
+                            fullUrl: `${baseUrl}/blog/${p.link}`,
+                            post_in: p.post_in
                         }
                     }))
     
@@ -20,7 +24,7 @@ export default (req, res) => {
     for(const u of urls){
         xml += `<url>
                     <loc>${u.fullUrl}</loc>
-                    <lastmod>${format(new Date,'yyyy-MM-dd')}</lastmod>
+                    <lastmod>${u.post_in}</lastmod>
                     <priority>0.50</priority>
                 </url>`
     }

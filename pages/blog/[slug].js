@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import fs from 'fs';
 
 import { format } from 'date-fns';
@@ -37,7 +39,7 @@ export function getStaticProps({params}) {
             title: title,
             type: type,
             description: description,
-            post_in: format(post_in,'dd/MM/yyyy'),
+            post_in: format(post_in,'yyyy-MM-dd'),
             content: htmlContent.toString()
         }
     }
@@ -45,21 +47,26 @@ export function getStaticProps({params}) {
 
 export default function Blog(props) {
     return (
-        <Layout nameTitle={props.title}>
-            <div className={styles.main}>
-                <div className={styles.main_meta}>
-                    <h1>{props.title}</h1>
-                    <h3>{props.description}</h3>
-                    <h4>Publicado em: {props.post_in}</h4>
+        <>
+            <Head>
+                <meta name="Description" content={props.description} />
+            </Head>
+            <Layout nameTitle={props.title}>
+                <div className={styles.main}>
+                    <div className={styles.main_meta}>
+                        <h1>{props.title}</h1>
+                        <h3>{props.description}</h3>
+                        <h4>Publicado em: {props.post_in}</h4>
+                    </div>
+                    <hr />
+                    <div className={styles.main_content}>
+                        <div
+                            className={styles['markdown']}
+                            dangerouslySetInnerHTML={{ __html: props.content }}
+                            ></div>
+                    </div>
                 </div>
-                <hr />
-                <div className={styles.main_content}>
-                    <div
-                        className={styles['markdown']}
-                        dangerouslySetInnerHTML={{ __html: props.content }}
-                    ></div>
-                </div>
-            </div>
-        </Layout>
+            </Layout>
+        </>
     )
 }
