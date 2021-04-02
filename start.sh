@@ -1,5 +1,7 @@
 #!/bin/bash
 
+git pull
+
 echo "sincronizando as bibliotecas!"
 yarn
 
