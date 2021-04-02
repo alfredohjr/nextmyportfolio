@@ -153,10 +153,11 @@
         width: 99%;
         margin-left: auto;
         margin-right: auto;
+        padding: 5px;
     }
 
     .main_content img {
-        width: 90%;
+        /* width: 90%; */
         display: block;
         margin-left: auto;
         margin-right: auto;
