@@ -42,17 +42,19 @@ importando os dados de um .csv para dentro de um dataframe(objeto padrão do pan
 > Alguns arquivos podem dar erro de codificação, se der, utilize a opção encoding='latin1', encoding='iso-8859-1' ou encoding='cp1252'.
 ```python
 import pandas as pd
-df = pd.red_csv('/tmp/example.csv')
+df = pd.red_csv('/tmp/ex.csv')
 # se der erro de codificação:
-df = pd.read_csv('/tmp/example.csv',encoding='latin1')
+df = pd.read_csv('/tmp/ex.csv'
+    ,encoding='latin1')
 ```
 
 importando arquivos em excel:
 ```python
 import pandas as pd
-df = pd.read_excel('/tmp/example.xlsx')
+df = pd.read_excel('/tmp/ex.xlsx')
 # lendo uma planilha em especifico
-df = pd.read_excel('/tmp/example.xlsx',sheet_name='data_example')
+df = pd.read_excel('/tmp/ex.xlsx'
+    ,sheet_name='data_example')
 ```
 
 lendo arquivo de um banco de dados:
