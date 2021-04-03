@@ -6,6 +6,17 @@ export default function SectionMenu(props) {
 
     const { posts } = props;
 
+    posts.sort((a,b) => {
+        if(a.post_in < b.post_in){
+            return 1;
+        }
+        if(a.post_in > b.post_in){
+            return -1
+        }
+
+        return 0
+    })
+
     return (
         <div className={styles.main}>
             {posts.map((p) => (
