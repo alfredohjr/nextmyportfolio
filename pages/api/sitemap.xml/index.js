@@ -5,8 +5,8 @@ export default (req, res) => {
 
     const baseUrl = process.env.NEXT_PUBLIC_BASEURL
     var urls = [
-        {fullUrl: `${baseUrl}`},
-        {fullUrl: `${baseUrl}/contact`}
+        {fullUrl: `${baseUrl}`, post_in: '2021-04-01'},
+        {fullUrl: `${baseUrl}/contact`, post_in: '2021-04-01'}
     ];
     
     // para os posts ou /posts
