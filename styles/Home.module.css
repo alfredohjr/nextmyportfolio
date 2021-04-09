@@ -11,7 +11,22 @@
     font-size: 75px;
 }
 
+.part_02 {
+    margin-top: 60px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
 .part_02 h2 {
     margin-top: 15px;
     padding-left: 15px;
+}
+
+.part_02 p {
+    margin-top: 15px;
+    padding-left: 15px; 
+}
+
+.horizontalline {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
