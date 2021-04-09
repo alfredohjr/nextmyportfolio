@@ -1,14 +1,12 @@
 import fs from 'fs';
-import path from 'path';
 
 import grayMatter from 'gray-matter';
-import remark from 'remark';
-import remarkHtml from 'remark-html';
+
 import { format, isAfter } from 'date-fns';
 
 export default function readPosts() {
 
-    const files = fs.readdirSync('./_posts');
+    const files = fs.readdirSync('./_posts','utf-8');
 
 
     var posts = []
