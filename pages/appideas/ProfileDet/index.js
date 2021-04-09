@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {FaChevronDown} from 'react-icons/fa';
 
 import Layout from '../../../src/components/Layout';
-import {Container} from './styles';
+import {Container} from '../../../styles/profileDetStyles';
 
 export default function ProfileDet(){
 

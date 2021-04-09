@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import Layout from '../../../src/components/Layout';
-import {Container} from './styles';
+import {Container} from '../../../styles/csv2jsonStyles';
 
 export default class Csv2Json extends Component {
 

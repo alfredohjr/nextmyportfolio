@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import Layout from '../../../src/components/Layout';
-import {Container, Lamp} from './styles';
+import {Container, Lamp} from '../../../styles/christimasLightsStyles';
 
 export default class ChristmasLights extends Component {
 
