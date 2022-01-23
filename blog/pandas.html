@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="pt-br"><head><meta name="viewport" content="width=device-width"/><meta charSet="utf-8"/><meta name="Description" content="uma biblioteca feita em python para analise de dados."/><title>pandas</title><meta http-equiv="Content-Language" content="pt-br"/><meta name="theme-color" content="rgb(0,0,0)"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&amp;display=swap" rel="stylesheet"/><script src="https://www.google.com/recaptcha/api.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QDGFW7941X"></script><script>window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments)};
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-QDGFW7941X');
+                    </script><meta name="next-head-count" content="15"/><link rel="preload" href="nextmyportfolio/_next/static/css/b85659319493018cbbc3.css" as="style"/><link rel="stylesheet" href="nextmyportfolio/_next/static/css/b85659319493018cbbc3.css" data-n-g=""/><link rel="preload" href="nextmyportfolio/_next/static/css/cc1293593e971e6aede9.css" as="style"/><link rel="stylesheet" href="nextmyportfolio/_next/static/css/cc1293593e971e6aede9.css" data-n-p=""/><noscript data-n-css=""></noscript><link rel="preload" href="nextmyportfolio/_next/static/chunks/main-335f4410a32c5c9c70c4.js" as="script"/><link rel="preload" href="nextmyportfolio/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" as="script"/><link rel="preload" href="nextmyportfolio/_next/static/chunks/framework.f8bd46fc02868c500bda.js" as="script"/><link rel="preload" href="nextmyportfolio/_next/static/chunks/2851664dd590969e6d6bdc1da3d40d5732d24646.ee0df70e70091f6dd14c.js" as="script"/><link rel="preload" href="nextmyportfolio/_next/static/chunks/pages/_app-15637e9b26c05f51654b.js" as="script"/><link rel="preload" href="nextmyportfolio/_next/static/chunks/3b81a7ada77dd099e3da0057b66948c1cdecafe0.511c9d30b61650b7a521.js" as="script"/><link rel="preload" href="nextmyportfolio/_next/static/chunks/pages/blog/%5Bslug%5D-45d227e019adc09ee916.js" as="script"/><style data-styled="" data-styled-version="5.2.3"></style></head><body><div id="__next"><div class="style_portfolio_main__2xZ2c"><div class="style_portfolio_menu__8WBNO undefined"><ul class="style_menu_main__2INjs"><li class="style_menu_item__1ZYIJ"><a href="/">Início</a></li><li class="style_menu_item__1ZYIJ"><a href="/blog">Blog</a></li><li class="style_menu_item__1ZYIJ"><a href="/contact">Contato</a></li></ul></div><div class="styles_slug_main__2-32t"><div class="styles_slug_main_meta__x6t7o"><h1>pandas</h1><h3>uma biblioteca feita em python para analise de dados.</h3><h4>Publicado em: <!-- -->2021-04-02</h4></div><hr/><div class="styles_slug_main_content__3oJez"><div class="styles_slug_markdown__17zxJ"><h2>Definição</h2>
+<p>em <a href="https://pt.wikipedia.org/wiki/Pandas_(software)">wikipedia</a></p>
+<p>Em programação de computadores, pandas é uma biblioteca de software criada para a linguagem Python para manipulação e análise de dados. Em particular, oferece estruturas e operações para manipular tabelas numéricas e séries temporais. É software livre sob a licensa licença BSD. O nome é derivado do termo inglês "panel data"(dados em painel), um termo usado em estatística e econometria para conjunto de dados que incluem várias unidades amostrais (indivíduos, empresas, etc) acompanhadas ao longo do tempo.</p>
+<p>em <a href="https://pandas.pydata.org/">pandas.pydata.org</a></p>
+<p>pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool,
+built on top of the Python programming language.</p>
+<h2>Eu uso para</h2>
+<ol>
+<li>Ler dados de banco de dados.</li>
+<li>Ler/Salvar arquivos em excel.</li>
+<li>Automação de processos.</li>
+<li>Envio de relatório.</li>
+</ol>
+<p>Antes de começar, aconselho a usar um ambiente separado de python, se não sabe o que é isso leia este <a href="/blog/virtualenv">link</a>.</p>
+<p>Aconselho também a usar os notebooks Jupyter, pode usar o <a href="https://colab.research.google.com">Google colab</a> ou o <a href="https://jupyter.org/install">Jupyter anaconda</a>.</p>
+<p>para instalar(pelo terminal):</p>
+<pre><code class="language-terminal">pip install pandas
+</code></pre>
+<p>importando a lib:</p>
+<blockquote>
+<p>"import pandas as pd" é uma convenção entre os usuarios da ferramenta.</p>
+</blockquote>
+<pre><code class="language-python">import pandas as pd
+</code></pre>
+<p>importando os dados de um .csv para dentro de um dataframe(objeto padrão do pandas):</p>
+<blockquote>
+<p>Alguns arquivos podem dar erro de codificação, se der, utilize a opção encoding='latin1', encoding='iso-8859-1' ou encoding='cp1252'.</p>
+</blockquote>
+<pre><code class="language-python">import pandas as pd
+df = pd.red_csv('/tmp/ex.csv')
+# se der erro de codificação:
+df = pd.read_csv('/tmp/ex.csv'
+    ,encoding='latin1')
+</code></pre>
+<p>importando arquivos em excel:</p>
+<pre><code class="language-python">import pandas as pd
+df = pd.read_excel('/tmp/ex.xlsx')
+# lendo uma planilha em especifico
+df = pd.read_excel('/tmp/ex.xlsx'
+    ,sheet_name='data_example')
+</code></pre>
+<p>lendo arquivo de um banco de dados:</p>
+<blockquote>
+<p>o sqlite3 é nativo no python.</p>
+</blockquote>
+<pre><code class="language-python">import pandas as pd
+import sqlite3
+
+# cria a conexão com o banco de dados
+con = sqlite3.connect('/tmp/db.sqlite3')
+
+# sql que será executado.
+sql = 'select * from employees'
+
+# recuperando dados do banco
+df = pd.read_sql(sql,con=con)
+</code></pre>
+</div></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"title":"pandas","type":"Artigo","description":"uma biblioteca feita em python para analise de dados.","post_in":"2021-04-02","content":"\u003ch2\u003eDefinição\u003c/h2\u003e\n\u003cp\u003eem \u003ca href=\"https://pt.wikipedia.org/wiki/Pandas_(software)\"\u003ewikipedia\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003eEm programação de computadores, pandas é uma biblioteca de software criada para a linguagem Python para manipulação e análise de dados. Em particular, oferece estruturas e operações para manipular tabelas numéricas e séries temporais. É software livre sob a licensa licença BSD. O nome é derivado do termo inglês \"panel data\"(dados em painel), um termo usado em estatística e econometria para conjunto de dados que incluem várias unidades amostrais (indivíduos, empresas, etc) acompanhadas ao longo do tempo.\u003c/p\u003e\n\u003cp\u003eem \u003ca href=\"https://pandas.pydata.org/\"\u003epandas.pydata.org\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003epandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool,\nbuilt on top of the Python programming language.\u003c/p\u003e\n\u003ch2\u003eEu uso para\u003c/h2\u003e\n\u003col\u003e\n\u003cli\u003eLer dados de banco de dados.\u003c/li\u003e\n\u003cli\u003eLer/Salvar arquivos em excel.\u003c/li\u003e\n\u003cli\u003eAutomação de processos.\u003c/li\u003e\n\u003cli\u003eEnvio de relatório.\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003eAntes de começar, aconselho a usar um ambiente separado de python, se não sabe o que é isso leia este \u003ca href=\"/blog/virtualenv\"\u003elink\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eAconselho também a usar os notebooks Jupyter, pode usar o \u003ca href=\"https://colab.research.google.com\"\u003eGoogle colab\u003c/a\u003e ou o \u003ca href=\"https://jupyter.org/install\"\u003eJupyter anaconda\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003epara instalar(pelo terminal):\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-terminal\"\u003epip install pandas\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eimportando a lib:\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\"import pandas as pd\" é uma convenção entre os usuarios da ferramenta.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003eimport pandas as pd\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eimportando os dados de um .csv para dentro de um dataframe(objeto padrão do pandas):\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003eAlguns arquivos podem dar erro de codificação, se der, utilize a opção encoding='latin1', encoding='iso-8859-1' ou encoding='cp1252'.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003eimport pandas as pd\ndf = pd.red_csv('/tmp/ex.csv')\n# se der erro de codificação:\ndf = pd.read_csv('/tmp/ex.csv'\n    ,encoding='latin1')\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eimportando arquivos em excel:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003eimport pandas as pd\ndf = pd.read_excel('/tmp/ex.xlsx')\n# lendo uma planilha em especifico\ndf = pd.read_excel('/tmp/ex.xlsx'\n    ,sheet_name='data_example')\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003elendo arquivo de um banco de dados:\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003eo sqlite3 é nativo no python.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003eimport pandas as pd\nimport sqlite3\n\n# cria a conexão com o banco de dados\ncon = sqlite3.connect('/tmp/db.sqlite3')\n\n# sql que será executado.\nsql = 'select * from employees'\n\n# recuperando dados do banco\ndf = pd.read_sql(sql,con=con)\n\u003c/code\u003e\u003c/pre\u003e\n"},"__N_SSG":true},"page":"/blog/[slug]","query":{"slug":"pandas"},"buildId":"O_-W9qkKU5kwSzprswMbx","assetPrefix":"nextmyportfolio","nextExport":false,"isFallback":false,"gsp":true}</script><script nomodule="" src="nextmyportfolio/_next/static/chunks/polyfills-d3bafdf43948e38613d7.js"></script><script src="nextmyportfolio/_next/static/chunks/main-335f4410a32c5c9c70c4.js" async=""></script><script src="nextmyportfolio/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" async=""></script><script src="nextmyportfolio/_next/static/chunks/framework.f8bd46fc02868c500bda.js" async=""></script><script src="nextmyportfolio/_next/static/chunks/2851664dd590969e6d6bdc1da3d40d5732d24646.ee0df70e70091f6dd14c.js" async=""></script><script src="nextmyportfolio/_next/static/chunks/pages/_app-15637e9b26c05f51654b.js" async=""></script><script src="nextmyportfolio/_next/static/chunks/3b81a7ada77dd099e3da0057b66948c1cdecafe0.511c9d30b61650b7a521.js" async=""></script><script src="nextmyportfolio/_next/static/chunks/pages/blog/%5Bslug%5D-45d227e019adc09ee916.js" async=""></script><script src="nextmyportfolio/_next/static/O_-W9qkKU5kwSzprswMbx/_buildManifest.js" async=""></script><script src="nextmyportfolio/_next/static/O_-W9qkKU5kwSzprswMbx/_ssgManifest.js" async=""></script></body></html>
