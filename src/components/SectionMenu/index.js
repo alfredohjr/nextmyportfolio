@@ -22,7 +22,7 @@ export default function SectionMenu(props) {
             {posts.map((p) => (
                 <div key={p.link} className={styles.card}>
                     <p className={styles.type}>{p.type}</p>
-                    <p className={styles.post_in}>{p.post_in}</p>
+                    <p className={styles.post_in}>{p.post_in_ptbr}</p>
                     <h3 className={styles.title}>{p.title}</h3>
                     <p className={styles.description}>{p.description}</p>
                     <div className={styles.writefor}>

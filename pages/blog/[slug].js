@@ -39,7 +39,7 @@ export function getStaticProps({params}) {
             title: title,
             type: type,
             description: description,
-            post_in: format(post_in,'yyyy-MM-dd'),
+            post_in: format(post_in,'dd/MM/yyyy'),
             content: htmlContent.toString()
         }
     }
@@ -57,6 +57,7 @@ export default function Blog(props) {
                         <h1>{props.title}</h1>
                         <h3>{props.description}</h3>
                         <h4>Publicado em: {props.post_in}</h4>
+                        <h5>em caso de dúvidas, envie email para alfredojrgasper@gmail.com</h5>
                     </div>
                     <hr />
                     <div className={styles.main_content}>

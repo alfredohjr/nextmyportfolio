@@ -22,7 +22,8 @@ export default function readPosts() {
                 title: title,
                 type: type, 
                 description: description,
-                post_in: format(post_in,'yyyy-MM-dd')
+                post_in: format(post_in,'yyyy-MM-dd'),
+                post_in_ptbr: format(post_in,'dd/MM/yyyy'),
             })
         } 
     };
