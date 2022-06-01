@@ -179,4 +179,8 @@
         width: 100%;
     }
 
+    .main_content pre {
+        overflow: auto;
+    }
+
 }
