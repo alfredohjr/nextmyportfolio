@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useEffect} from 'react';
 import {GiTomato} from 'react-icons/gi';
 
 import Layout from '../../../src/components/Layout';
@@ -8,11 +8,12 @@ export default class Pomodoro extends Component {
 
     constructor(props){
         super(props);
+
         this.state = {
             size:1,
             startDisabled:false,
             tomatoSize:300,
-            tomatoCount:0,
+            tomatoCount:[],
             sleepMiliseconds: 3000,
             timerPomodoroDisabled:{
                 "15":true,
@@ -22,6 +23,20 @@ export default class Pomodoro extends Component {
                 "5":false,
                 "10":false,
             }
+        }
+    }
+
+    componentDidMount() {
+        if(localStorage.getItem('tomatos')) {
+            const tomatos = JSON.parse(localStorage.getItem('tomatos'));
+            this.setState({tomatoCount:tomatos});
+        }
+    };
+
+    componentDidUpdate(prevProps) {
+        if(prevProps.tomatoCount !== this.state.tomatoCount) {
+            const tomatos = this.state.tomatoCount;
+            localStorage.setItem('tomatos',JSON.stringify(tomatos));
         }
     }
 
@@ -42,7 +57,8 @@ export default class Pomodoro extends Component {
             this.setState({size:1});
 
             if(sleepMiliseconds > 2000) {
-                this.setState({tomatoCount:tomatoCount+1});
+                const tomatoNow = ((sleepMiliseconds/1000)*tomatoSize)/60;
+                this.setState({tomatoCount:[...tomatoCount,{size:tomatoNow,startedAt:Date()}]});
             }
         }
 
@@ -91,6 +107,11 @@ export default class Pomodoro extends Component {
 
     }
 
+    handleApagar = (e) => {
+        localStorage.removeItem('tomatos');
+        this.setState({tomatoCount:[]});
+    }
+
 
     render() {
 
@@ -106,13 +127,18 @@ export default class Pomodoro extends Component {
                         </div>
                         <div className='main-menu'>
                             <div className="tomato-count">
-                                {[...Array(tomatoCount)].map((e,i) =>(
-                                    <div key={i}>
-                                        <GiTomato color="tomato"/>
+                                {tomatoCount.map((e) =>(
+                                    <div key={e.startedAt}>
+                                        <GiTomato className="tomato-icon" size={e.size} color="tomato"/>
+                                        <div className="tomato-info">
+                                            <div>Inicio: {e.startedAt}</div>
+                                            <div>Término: {e.startedAt + e.size}</div>
+                                        </div>
                                     </div>
                                 ))}
                             </div>
                             <div className='menu-timer'>
+                                {/* <input name="size" size={5} type="range" min="1" max="300" onChange={this.handleInputChange}/> */}
                                 <button value="15" onClick={this.handleTimePomodoro} disabled={timerPomodoroDisabled["15"]}>15 Min</button>
                                 <button value="25" onClick={this.handleTimePomodoro} disabled={timerPomodoroDisabled["25"]}>25 Min</button>
                                 <button value="35" onClick={this.handleTimePomodoro} disabled={timerPomodoroDisabled["35"]}>35 Min</button>
@@ -125,6 +151,7 @@ export default class Pomodoro extends Component {
                             <div className='menu-ss'>
                                 <button value="start" onClick={this.handleStartStop} disabled={startDisabled}>Começar</button>
                                 <button value="stop" onClick={this.handleStartStop} disabled={!startDisabled}>Parar</button>
+                                <button value="apagar" onClick={this.handleApagar}>Apagar pomodoros</button>
                             </div>
                         </div>
                     </div>

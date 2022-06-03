@@ -95,9 +95,25 @@ export const Container = styled.div`
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        align-items: end;
 
         div {
-            width: 10%;
+            padding: 2px;
         }
+    }
+
+    .tomato-info {
+        display: none;
+        position: absolute;
+        margin-top: -115px;
+        color: tomato;
+        padding: 3px;
+        border-radius: 3px;
+        // opacity: .8;
+        text-align: left;
+    }
+
+    .tomato-icon:hover + .tomato-info {
+        // display: block;
     }
 `; 
