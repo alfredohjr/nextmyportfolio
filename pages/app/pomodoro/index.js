@@ -151,7 +151,7 @@ export default class Pomodoro extends Component {
                             <div className='menu-ss'>
                                 <button value="start" onClick={this.handleStartStop} disabled={startDisabled}>Começar</button>
                                 <button value="stop" onClick={this.handleStartStop} disabled={!startDisabled}>Parar</button>
-                                <button value="apagar" onClick={this.handleApagar}>Apagar pomodoros</button>
+                                <button value="apagar" onClick={this.handleApagar}>Recomeçar</button>
                             </div>
                         </div>
                     </div>
