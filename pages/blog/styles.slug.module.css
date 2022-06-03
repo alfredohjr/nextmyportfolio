@@ -145,6 +145,7 @@
     margin-top: 15px;
     margin-bottom: 15px;
     background-color: rgb(212, 208, 208);
+    overflow: auto;
 }
 
 .main_content iframe {
@@ -179,8 +180,6 @@
         width: 100%;
     }
 
-    .main_content pre {
-        overflow: auto;
-    }
+    .main_content pre {}
 
 }
