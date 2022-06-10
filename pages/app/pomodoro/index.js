@@ -61,7 +61,7 @@ export default class Pomodoro extends Component {
 
                 var dStart = new Date();
                 var dEnd = new Date();
-                dEnd.setMinutes(dEnd.getMinutes() + tomatoNow);
+                dStart.setMinutes(dStart.getMinutes() - tomatoNow);
 
                 dStart = `${dStart.getDate()}/${dStart.getMonth()}/${dStart.getFullYear()} ${dStart.getHours()}:${String(dStart.getMinutes()).padStart(2,'0')}`;
                 dEnd = `${dEnd.getDate()}/${dEnd.getMonth()}/${dEnd.getFullYear()} ${dEnd.getHours()}:${String(dEnd.getMinutes()).padStart(2,'0')}`;
