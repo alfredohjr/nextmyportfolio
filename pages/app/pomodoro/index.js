@@ -1,4 +1,4 @@
-import React, {Component, useEffect} from 'react';
+import React, {Component} from 'react';
 import {GiTomato} from 'react-icons/gi';
 
 import Layout from '../../../src/components/Layout';
@@ -58,7 +58,18 @@ export default class Pomodoro extends Component {
 
             if(sleepMiliseconds > 2000) {
                 const tomatoNow = ((sleepMiliseconds/1000)*tomatoSize)/60;
-                this.setState({tomatoCount:[...tomatoCount,{size:tomatoNow,startedAt:Date()}]});
+
+                var dStart = new Date();
+                var dEnd = new Date();
+                dEnd.setMinutes(dEnd.getMinutes() + tomatoNow);
+
+                dStart = `${dStart.getDate()}/${dStart.getMonth()}/${dStart.getFullYear()} ${dStart.getHours()}:${String(dStart.getMinutes()).padStart(2,'0')}`;
+                dEnd = `${dEnd.getDate()}/${dEnd.getMonth()}/${dEnd.getFullYear()} ${dEnd.getHours()}:${String(dEnd.getMinutes()).padStart(2,'0')}`;
+
+                this.setState(
+                    {tomatoCount:[...tomatoCount
+                        ,{size:tomatoNow,startedAt:Date(),startedAtFormated:dStart,finishedAtFormated:dEnd}
+                    ]});
             }
         }
 
@@ -129,16 +140,19 @@ export default class Pomodoro extends Component {
                             <div className="tomato-count">
                                 {tomatoCount.map((e) =>(
                                     <div key={e.startedAt}>
-                                        <GiTomato className="tomato-icon" size={e.size} color="tomato"/>
+                                        <GiTomato 
+                                            className="tomato-icon" 
+                                            size={e.size} 
+                                            color={"tomato"}/>
                                         <div className="tomato-info">
-                                            <div>Inicio: {e.startedAt}</div>
-                                            <div>Término: {e.startedAt + e.size}</div>
+                                            <div>Inicio: {e.startedAtFormated}</div>
+                                            <div>Término: {e.finishedAtFormated}</div>
                                         </div>
                                     </div>
                                 ))}
                             </div>
                             <div className='menu-timer'>
-                                {/* <input name="size" size={5} type="range" min="1" max="300" onChange={this.handleInputChange}/> */}
+                                <input name="size" size={5} type="range" min="1" max="300" onChange={this.handleInputChange}/>
                                 <button value="15" onClick={this.handleTimePomodoro} disabled={timerPomodoroDisabled["15"]}>15 Min</button>
                                 <button value="25" onClick={this.handleTimePomodoro} disabled={timerPomodoroDisabled["25"]}>25 Min</button>
                                 <button value="35" onClick={this.handleTimePomodoro} disabled={timerPomodoroDisabled["35"]}>35 Min</button>

@@ -114,6 +114,11 @@ export const Container = styled.div`
     }
 
     .tomato-icon:hover + .tomato-info {
-        // display: block;
+        display: block;
+        z-index:99;
+        background: black;
+        color: white;
+        opacity: .8;
+        padding: 5px;
     }
 `; 
