@@ -152,7 +152,6 @@ export default class Pomodoro extends Component {
                                 ))}
                             </div>
                             <div className='menu-timer'>
-                                {<input name="size" size={5} type="range" min="1" max="300" onChange={this.handleInputChange}/>}
                                 <button value="15" onClick={this.handleTimePomodoro} disabled={timerPomodoroDisabled["15"]}>15 Min</button>
                                 <button value="25" onClick={this.handleTimePomodoro} disabled={timerPomodoroDisabled["25"]}>25 Min</button>
                                 <button value="35" onClick={this.handleTimePomodoro} disabled={timerPomodoroDisabled["35"]}>35 Min</button>
