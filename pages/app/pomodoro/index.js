@@ -63,8 +63,8 @@ export default class Pomodoro extends Component {
                 var dEnd = new Date();
                 dStart.setMinutes(dStart.getMinutes() - tomatoNow);
 
-                dStart = `${dStart.getDate()}/${dStart.getMonth()+1}/${dStart.getFullYear()} ${dStart.getHours()}:${String(dStart.getMinutes()).padStart(2,'0')}`;
-                dEnd = `${dEnd.getDate()}/${dEnd.getMonth()+1}/${dEnd.getFullYear()} ${dEnd.getHours()}:${String(dEnd.getMinutes()).padStart(2,'0')}`;
+                dStart = `${dStart.getDate()}/${parseInt(dStart.getMonth())+1}/${dStart.getFullYear()} ${dStart.getHours()}:${String(dStart.getMinutes()).padStart(2,'0')}`;
+                dEnd = `${dEnd.getDate()}/${parseInt(dEnd.getMonth())+1}/${dEnd.getFullYear()} ${dEnd.getHours()}:${String(dEnd.getMinutes()).padStart(2,'0')}`;
 
                 this.setState(
                     {tomatoCount:[...tomatoCount
