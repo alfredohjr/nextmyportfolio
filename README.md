@@ -2,11 +2,11 @@
 
 Um simples blog feito com nextjs.
 
-![](public/images/logo.png)
+![](https://github.com/alfredohjr/nextmyportfolio/raw/main/public/images/logo.png#vitrinedev)
 
 <hr>
 
-![](public/gif/apresentacao.gif)
+![](https://github.com/alfredohjr/nextmyportfolio/raw/main/public/gif/apresentacao.gif)
 
 para começar:
 ```command
