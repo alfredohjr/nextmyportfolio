@@ -1,14 +1,20 @@
-## nextmyportfolio
+# nextmyportfolio
 
 Um simples blog feito com nextjs.
 
+![](public/images/logo.png)
+
+<hr>
+
+![](public/gif/apresentacao.gif)
+
 para começar:
-```javascript
+```command
 yarn
 ```
 
 para rodar em modo de desenvolvimento:
-```javascript
+```command
 yarn dev
 ```
 
